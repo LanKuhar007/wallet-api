@@ -16,7 +16,7 @@ if(process.env.NODE_ENV === "production") job.start();
 app.use(rateLimiter);
 app.use(express.json());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5001;
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'OK' });
